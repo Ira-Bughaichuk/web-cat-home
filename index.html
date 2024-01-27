@@ -1,14 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./basik-styles.css">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
-</head>
-<body>
-    <h1>grid page</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./basic-styles.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Grid</title>
+  </head>
+  <body>
+    <div class="wrapper">
+    <div class="lesson">
+        <h2>Nested Grids</h2>
+        <p></p>
+        <div class="container-11">
+            <div class="grid-item">
+                <img src="https://wiki.dave.eu/images/thumb/4/47/Placeholder.png/1200px-Placeholder.png" alt="placeholder"
+                    width="100">
+                <div class="wrapper">
+                    <h2> Blog Title</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="https://wiki.dave.eu/images/thumb/4/47/Placeholder.png/1200px-Placeholder.png" alt="placeholder"
+                    width="100">
+                <div class="wrapper">
+                    <h2> Blog Title</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="https://wiki.dave.eu/images/thumb/4/47/Placeholder.png/1200px-Placeholder.png" alt="placeholder"
+                    width="100">
+                <div class="wrapper">
+                    <h2> Blog Title</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div class="grid-item">
+                <img src="https://wiki.dave.eu/images/thumb/4/47/Placeholder.png/1200px-Placeholder.png" alt="placeholder"
+                    width="100">
+                <div class="wrapper">
+                    <h2> Blog Title</h2>
+                    <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="lesson">
+        <h2>Grid Alignment and Justification</h2>
+        <div class="container-10">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item item-4">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+            <div class="item">10</div>
+        </div>
+      </div>
+    <div class="lesson">
+        <h2>Grid template areas</h2>
+        <div class="container-9">
+            <div class="header-2">Header</div>
+            <div class="sidebar-2">Sidebar</div>
+            <div class="main-2">Main</div>
+            <div class="footer-2">Footer</div>
+        </div>
+      </div>
+    <div class="lesson">
+        <h2>Інструкція minmax() в CSS Grid</h2>
+        <p>респонивна верстка без медіа правил</p>
+        <div class="container-8">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+      </div>
+    <div class="lesson">
+        <h2>Властивості auto-fit та auto-fill</h2>
+        <p>використовується коли ми не знаємо точну кількість колонок</p>
+        <div class="container-7">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+      </div>
+    <div class="lesson">
+      <h2>Розміщення елементів всередині grid контейнера</h2>
+      <div class="container-6">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main</div>
+        <div class="footer">Footer</div>
+      </div>
+    </div>
+    <div class="lesson">
+      <h2>Функція repeat в СSS grid</h2>
+      <div class="container-5">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+    <div class="lesson">
+      <h2>розміри в CSS grid</h2>
+      <div class="container-4">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+        <div class="item">ширина контента</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+        <div class="item">10</div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>явна і не явна column</h2>
+      <p>
+        не явна це та сітка яку створив сам браузер. <br />Якщо колонок стає
+        більше чим зазначено у grid-template-columns то усі наступні будуть
+        перекидатись на наступний рядок. <br />Щоб керувати неявними колонками
+        потрібно скористатися grid-auto-flow
+      </p>
+      <div class="container-3">
+        <div class="item">явні</div>
+        <div class="item">явні</div>
+        <div class="item">не явні</div>
+        <div class="item">не явні</div>
+        <div class="item">не явні</div>
+      </div>
+    </div>
+
+    <div class="lesson">
+      <h2>явна і не явна сітка - row</h2>
+      <p>не явна це та сітка яку створив сам браузер</p>
+
+      <div class="container-2">
+        <div class="item">явні</div>
+        <div class="item">явні</div>
+        <div class="item">явні</div>
+        <div class="item">явні</div>
+        <div class="item">не явні</div>
+        <div class="item">не явні</div>
+        <div class="item">не явні</div>
+        <div class="item">не явні</div>
+      </div>
+    </div>
+
+    <div class="container-1 lesson">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+    </div>
+</div>
+  </body>
 </html>

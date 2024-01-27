@@ -1,5 +1,218 @@
-:root{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+.container-11{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+.grid-item {
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.container-10{
+display: grid;
+grid-template-columns: repeat(4, 150px);
+grid-template-rows: repeat(3, 150px);
+height: 500px;
+border: 10px solid;
+/* justify-items: center; // вирівнює по ліво-право контент у середині блока 
+align-items: center; */ // вирівнює по низ-верх контент у середині блока 
+/* justify-content: space-evenly; */  //вирівнює по ліво-право усі блоки в середині контейнера 
+/* align-content: space-evenly; */ //вирівнює по низ-верх усі блоки в середині контейнера 
+}
+
+.item-4 {
+    justify-self: stretch;
+    align-self: stretch;
+  }
+  
+/* justify-items */
+
+/* align-items */
+
+/* justify-content */
+
+/* align-content */
+
+/* justify-self */
+
+/* align-self */
+
+.container-9 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 150px);
+  gap: 20px;
+  grid-template-areas:
+    "h h h h"
+    "m m . s"
+    "f f f f";
+}
+.header-2 {
+  grid-area: h;
+  background-color: rgb(122, 230, 20);
+}
+.main-2 {
+  grid-area: m;
+  background-color: rgb(218, 105, 105);
+}
+.sidebar-2 {
+  grid-area: s;
+  background-color: rgb(230, 20, 20);
+}
+.footer-2 {
+  grid-area: f;
+  background-color: rgb(42, 165, 104);
+}
+@media screen and (max-width: 700px) {
+    .container-9{
+        grid-template-areas:
+    "s h h h"
+    "s m m m"
+    "s f f f";
+    }
+}
+.container-8 {
+  display: grid;
+  border: 10px solid black;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.container-7 {
+  display: grid;
+  border: 10px solid rgb(26, 25, 25);
+
+  // заповнює такою кількістю колонок, яка у нас є (може бути 4 а може бути 10, тобто коли ми не знаємо точної кількості) але так щоб кожна мала розмір 150px
+  //якщо залишилось вільне місце то колонки наступні будуть пусті
+  grid-template-columns: repeat(auto-fill, 150px);
+
+  //якщо залишилось вільне місце то колонки не будуть пусті їх зовсім не буде показано
+  grid-template-columns: repeat(auto-fit, 150px);
+}
+
+.container-6 {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.container-6 .header {
+  /* grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2; */
+  //or
+  grid-column: 1 / 5;
+  grid-row: 1 / 2;
+  background-color: blue;
+}
+.container-6 .main {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  background-color: brown;
+}
+.container-6 .sidebar {
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+  background-color: rgb(230, 20, 20);
+}
+.container-6 .footer {
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+  background-color: rgb(42, 165, 104);
+}
+.container-5 {
+  background-color: blueviolet;
+  display: grid;
+  gap: 25px;
+  /* grid-template-columns: repeat(2, 1fr); */
+
+  //or
+  // буде 7 колонок які будуть чередувати розмір 1-150px 2-70px 3-150px 4-70px ...
+  /* grid-template-columns: repeat(7, 150px, 70px); */
+
+  //or
+  // 1 колонка буде мати 100px, а наступні 4  між собою однаково розподілені
+  /* grid-template-columns: 100px repeat(4, 1fr); */
+
+  //or
+  // 1 колонка буде мати 100px,
+  //а наступні 4  між собою однаково розподілені і 5 колонка буде 200px
+  /* grid-template-columns: 100px repeat(4, 1fr) 200px; */
+
+  //or
+  //1fr - 2fr - 1fr - 2fr - 1fr - 2fr.
+  //Всього буде 6 стовпців: 3 колонки шириною в "1fr" та 3 колонки шириною в "2fr".
+  grid-template-columns: repeat(3, 1fr 2fr);
+}
+.container-4 {
+  background-color: blueviolet;
+  display: grid;
+  gap: 25px;
+  border: 10px solid black;
+  /* grid-template-columns: 50px 100px 20px 50px; */
+
+  //розміри в CSS grid use %
+  // не буде влазити у наш контейнер тому що ще враховувати поьрібно gap: 25px;
+  /* grid-template-columns: 25% 25% 25% 25%; */
+
+  //розміри в CSS grid use 1fr
+  // всі елементи рівномірно розподілились у контейнері
+  /* grid-template-columns: 1fr 1fr 1fr 1fr;  */
+
+  //розміри в CSS grid use 1fr and px
+  // тому потрібним колонкам можна задати фіксовану ширину
+  // а всі інші рівномірно займуть ширину що залишилась
+  /* grid-template-columns: 150px 1fr 1fr 1fr;*/
+  /* grid-template-columns: 150px 1fr 2fr 1fr; */
+
+  // auto вказує що ширина колонки буде відповідно скільки потрібно для контента
+  grid-template-columns: 150px auto 2fr 1fr;
+}
+.container-3 {
+  background-color: blueviolet;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 50px 100px; //2 елементи
+  grid-auto-flow: column; //нові неявні елементи будуть додаватись як колонки
+}
+.container-2 {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: 100px 200px; //2 елементи
+  grid-template-rows: 250px 100px; //2 елементи
+  gap: 20px;
+  // щоб керувати не явними елементами, тобто якщо елементів більше чим 4
+  grid-auto-rows: 50px; // встановити розмір усіх наступних не явних рядків
+
+  //or
+
+  // розмір 1- неявного рядка 50px розмір 2- неявного рядка 100px
+  /* grid-auto-rows: 50px 100px;  */
+}
+.container-1 {
+  background-color: blueviolet;
+  display: grid;
+  grid-template-columns: 100px 200px 50px; //width for block
+  grid-template-rows: 50px 100px 20px; // height for block
+
+  /* column-gap: 50px;
+    row-gap: 20px; */
+  // or
+  gap: 20px 50px; //1-row 2-column
+}
+.lesson {
+  border: 5px solid red;
+}
+.item {
+  background-color: aqua;
+}
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
 }
